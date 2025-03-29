@@ -4,12 +4,10 @@ import { createContext, useContext, useState } from "react"
 import { cn } from "../../utils/cn"
 import { X } from "lucide-react"
 
-// Export the context so it can be imported in use-toast.js
 export const ToastContext = createContext({
   toast: () => {},
 })
 
-// We'll keep this for backward compatibility, but it's also exported from use-toast.js now
 export const useToast = () => useContext(ToastContext)
 
 export const Toaster = ({ children }) => {
@@ -37,9 +35,12 @@ export const Toaster = ({ children }) => {
           <div
             key={toast.id}
             className={cn(
-              "bg-white rounded-lg border shadow-lg p-4 animate-in slide-in-from-right-5",
+              "bg-white rounded-lg border border-gray-200 shadow-lg p-4",
               toast.variant === "destructive" && "border-red-500 bg-red-50",
             )}
+            style={{
+              animation: "0.3s ease-out 0s 1 slideInFromRight",
+            }}
           >
             <div className="flex justify-between items-start">
               <div>
@@ -53,6 +54,18 @@ export const Toaster = ({ children }) => {
           </div>
         ))}
       </div>
+      <style jsx>{`
+        @keyframes slideInFromRight {
+          0% {
+            transform: translateX(100%);
+            opacity: 0;
+          }
+          100% {
+            transform: translateX(0);
+            opacity: 1;
+          }
+        }
+      `}</style>
     </ToastContext.Provider>
   )
 }

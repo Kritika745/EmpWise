@@ -87,7 +87,7 @@ function LoginForm() {
                 required
               />
             </div>
-            <Button type="submit" className="w-full bg-indigo-600 hover:bg-indigo-700" disabled={loading}>
+            <Button type="submit" className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-3"  disabled={loading}>
               {loading ? (
                 <>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />

@@ -86,7 +86,7 @@ function EditUserForm({ user }) {
         </div>
 
         <div className="flex gap-3 pt-2">
-          <Button type="submit" disabled={loading} className="bg-indigo-600 hover:bg-indigo-700">
+          <Button type="submit" disabled={loading} className="bg-indigo-600 hover:bg-indigo-700 p-2">
             {loading ? (
               <>
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />

@@ -7,14 +7,14 @@ const Button = React.forwardRef(
     return (
       <Comp
         className={cn(
-          "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+          "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
           {
-            "bg-primary text-primary-foreground hover:bg-primary/90": variant === "default",
-            "bg-destructive text-destructive-foreground hover:bg-destructive/90": variant === "destructive",
-            "border border-input bg-background hover:bg-accent hover:text-accent-foreground": variant === "outline",
-            "bg-secondary text-secondary-foreground hover:bg-secondary/80": variant === "secondary",
-            "bg-transparent hover:bg-accent hover:text-accent-foreground": variant === "ghost",
-            "bg-transparent underline-offset-4 hover:underline text-primary": variant === "link",
+            "bg-indigo-600 text-white hover:bg-indigo-700": variant === "default",
+            "bg-red-500 text-white hover:bg-red-600": variant === "destructive",
+            "border border-gray-200 bg-white hover:bg-gray-100": variant === "outline",
+            "bg-gray-100 text-gray-900 hover:bg-gray-200": variant === "secondary",
+            "bg-transparent hover:bg-gray-100": variant === "ghost",
+            "bg-transparent underline-offset-4 hover:underline text-indigo-600": variant === "link",
             "h-10 px-4 py-2": size === "default",
             "h-9 rounded-md px-3": size === "sm",
             "h-11 rounded-md px-8": size === "lg",
